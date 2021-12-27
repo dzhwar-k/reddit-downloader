@@ -1,7 +1,7 @@
 <?php
 if (count($_POST) > 0 && !is_null($_POST['url'])) {
 
-  if (strpos($_POST['url'], 'redgifs.com')) { // porn
+  if (strpos($_POST['url'], 'redgifs.com')) {
     $page = file_get_contents($_POST['url']);
     preg_match_all("/(?<=\<meta\sproperty\=\"og:video\" content\=\")https?:\/\/\w+\.redgifs\.com\/\w+\.mp4/i", $page, $out);
     if (count($out) == 0) {
